@@ -5,7 +5,7 @@
 <div class="product-detail">
     <h2>{{ product.name }}</h2>
     <p>{{ product.description }}</p>
-    <p>Price: ${{ product.price }}</p>
+    <p>Price: {{ product.price }} SR</p>
     <div class="d-flex align-items-center mt-3">
         <form method="post" style="margin-right: 10px;">
             {% csrf_token %}

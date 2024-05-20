@@ -46,7 +46,10 @@ def update_product(request, product_id):
             return redirect('product_detail', product_id=product.id)
     else:
         form = ProductForm(instance=product)
-    return render(request, 'products/update_product.html', {'form': form, 'product': product})
+    return render(request, 'products/update_product.html', {
+        'form': form, 
+        'product': product
+        })
 
 @login_required
 def delete_product(request, pk):
