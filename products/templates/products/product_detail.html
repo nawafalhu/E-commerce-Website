@@ -1,0 +1,18 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="product-detail">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.price }} SR</p>
+    <div class="d-flex align-items-center mt-3">
+        <form method="post" style="margin-right: 10px;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">Purchase</button>
+        </form>
+        <a href="{% url 'update_product' product.id %}" class="btn btn-success me-2">Update Product</a>
+        <a href="{% url 'product_delete' product.id %}" class="btn btn-danger">Delete Product</a>
+    </div>
+</div>
+{% endblock %}
